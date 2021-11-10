@@ -44,9 +44,7 @@ const StudentList = () => {
     <>
       <h1>All Students</h1>
       <Link to="/add">
-        <Button variant="contained">
-          Add Student
-        </Button>
+        <Button variant="contained">Add Student</Button>
       </Link>
       <br />
       <br />
@@ -82,7 +80,9 @@ const StudentList = () => {
                     <TableCell align="center">{student.lastname}</TableCell>
                     <TableCell align="center">{student.email}</TableCell>
                     <TableCell align="center">
-                      <Button variant="contained">View</Button>
+                      <Link to={`/student/${student.id}`}>
+                        <Button variant="contained">View</Button>
+                      </Link>
                       {` `}
                       <Button variant="contained" color="success">
                         Edit
