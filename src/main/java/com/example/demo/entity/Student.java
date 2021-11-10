@@ -9,7 +9,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "STU_SEQ")
     @SequenceGenerator(sequenceName = "student_sequence", allocationSize = 1, name = "STU_SEQ")
-    private int id;
+    private Long id;
 
     @Column(name = "firstname", nullable = false)
     private String firstname;
@@ -29,11 +29,11 @@ public class Student {
         this.email = email;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

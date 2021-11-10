@@ -6,12 +6,20 @@ import com.example.demo.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+/**
+ * Student Service Implementation Class.
+ */
 @Service
 public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;
 
+    /**
+     * Initilizing studentRepository.
+     * @param studentRepository StudentRepository Object.
+     */
     public StudentServiceImpl(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
@@ -19,5 +27,16 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    @Override
+    public Student getStudentById(Long id) {
+        Optional<Student> op_student = studentRepository.findById(id);
+        return op_student.get();
+    }
+
+    @Override
+    public Student addStudent(Student student) {
+        return studentRepository.save(student);
     }
 }
