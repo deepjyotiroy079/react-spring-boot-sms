@@ -5,10 +5,8 @@ import com.example.demo.service.StudentService;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -60,5 +58,13 @@ public class StudentController {
     @RequestMapping(method = RequestMethod.PUT, value = "/edit/{id}")
     public Student editStudent(@RequestBody Student student,@PathVariable Long id) {
         return studentService.updateStudent(student, id);
+    }
+
+    /**
+     * Deleting a student
+     */
+    @RequestMapping(method = RequestMethod.DELETE, value = "/delete/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
     }
 }

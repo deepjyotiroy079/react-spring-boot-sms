@@ -88,9 +88,9 @@ const StudentList = () => {
                         <Button variant="contained">Edit</Button>
                       </Link>
                       {` `}
-                      <Button variant="contained" color="error">
-                        Delete
-                      </Button>
+                      <Link to={`/student/delete/${student.id}`}>
+                        <Button variant="contained" color="error">Delete</Button>
+                      </Link>
                     </TableCell>
                   </TableRow>
                 ))}
