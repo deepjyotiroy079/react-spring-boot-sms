@@ -12,4 +12,6 @@ public interface StudentService {
     Student getStudentById(Long id);
 
     Student addStudent(Student student);
+
+    Student updateStudent(Student student, Long id);
 }

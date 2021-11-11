@@ -21,7 +21,7 @@ const bull = (
 const StudentInfo = () => {
   const { id } = useParams();
 
-  const [studentData, setStudentData] = useState([]);
+  const [studentData, setStudentData] = useState({});
   // const [isAdding, setIsAdding] = useState(false);
   const [loading, setLoading] = useState(false);
 

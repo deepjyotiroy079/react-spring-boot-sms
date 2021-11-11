@@ -39,4 +39,19 @@ public class StudentServiceImpl implements StudentService {
     public Student addStudent(Student student) {
         return studentRepository.save(student);
     }
+
+    @Override
+    public Student updateStudent(Student newStudent, Long id) {
+        return studentRepository.findById(id)
+            .map(student -> {
+                student.setFirstname(newStudent.getFirstname());
+                student.setLastname(newStudent.getLastname());
+                student.setEmail(newStudent.getEmail());
+                return studentRepository.save(student);
+            })
+            .orElseGet(() -> {
+                newStudent.setId(id);
+                return studentRepository.save(newStudent);
+            });
+    }
 }

@@ -84,9 +84,9 @@ const StudentList = () => {
                         <Button variant="contained">View</Button>
                       </Link>
                       {` `}
-                      <Button variant="contained" color="success">
-                        Edit
-                      </Button>
+                      <Link to={`/student/edit/${student.id}`}>
+                        <Button variant="contained">Edit</Button>
+                      </Link>
                       {` `}
                       <Button variant="contained" color="error">
                         Delete
